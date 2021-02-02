@@ -1,1 +1,2 @@
 #!/bin/bash
+head -n 11 tst3 | cut -f1 | sort | tail -n +2
