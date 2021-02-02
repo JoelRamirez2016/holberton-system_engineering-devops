@@ -1,2 +1,2 @@
 #!/bin/bash
-cat tst2| cut -c1
+cat tst2| cut -c1 | tr -d '\n'
