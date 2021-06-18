@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is displaying the status of a visitor IP from Apache log file
+
+awk '{print $1 " " $9}' apache-access.log
