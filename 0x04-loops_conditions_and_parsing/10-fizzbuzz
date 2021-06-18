@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script is displaying numbers from 1 to 100 and FizzBuzz
+
+for n in {1..100}
+do
+	printed=0
+
+	if [ $(( n % 3 )) == 0 ]
+	then
+		echo -n "Fizz"
+		printed=1
+	fi
+
+	if [ $(( n % 5 )) == 0 ]
+	then
+		echo -n "Buzz"
+		printed=1
+	fi
+	if [ $printed == 1 ]
+	then
+		echo ""
+	else
+		echo $n
+	fi
+done

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# This script is displaying "Holberton School" 10 times
+# This script is displaying The content of the current directory
+# In a list format
+# Where only the part of the name after the first dash is displayed
 
-for f in $(ls)
+for f in l=$(ls)
 do
-	echo $f | cut -d "-" -f2
+	echo "$f" | cut -d "-" -f2
 done
