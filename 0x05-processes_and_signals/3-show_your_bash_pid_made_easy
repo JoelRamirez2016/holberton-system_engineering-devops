@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# displays a list of currently running processes only contain the word bash without ps
+find /proc -mindepth 2 -maxdepth 2 -name exe -lname '*/bash' -printf "%h bash\n" 2>/dev/null | sed s+^/proc/++
