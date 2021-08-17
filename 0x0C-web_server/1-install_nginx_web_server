@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# configures a new Ubuntu machine to respect above requirements
+sudo apt install nginx -y
+sudo ufw allow https
+echo "Holberton School for the win!" > index.nginx-debian.html
