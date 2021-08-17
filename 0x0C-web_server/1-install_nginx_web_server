@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # configures a new Ubuntu machine to respect above requirements
+sudo apt update
 sudo apt install nginx -y
 sudo ufw allow https
-echo "Holberton School for the win!" > index.html
+echo 'Holberton School for the win!' > /var/www/html/index.nginx-debian.html
 sudo service nginx restart
