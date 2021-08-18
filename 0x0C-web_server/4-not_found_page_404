@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# configures a new Ubuntu machine to respect above requirements
+sudo apt update
+sudo apt install nginx -y
+sudo ufw allow https
+echo 'Holberton School for the win!' > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/status404.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a error_page 404 /status404.html;' /etc/nginx/sites-available/default
+sudo service nginx restart
