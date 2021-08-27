@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# display information about subdomains
+
+web_info () {
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | \
+	awk -v subdomain="$2" 'FNR == 2 {print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+}
+
+if [ "$#" == 1 ]
+then
+	web_info "$1" "www"
+	web_info "$1" "lb-01"
+	web_info "$1" "web-01"
+	web_info "$1" "web-02"
+else
+	web_info "$1" "$2"
+fi
