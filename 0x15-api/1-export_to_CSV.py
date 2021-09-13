@@ -4,9 +4,9 @@ Using what you did in the task #0, extend your Python script
 to export data in the CSV format.
 
 """
-import sys
-import requests
 import csv
+import requests
+import sys
 
 
 if __name__ == "__main__":
@@ -16,9 +16,9 @@ if __name__ == "__main__":
     data = []
 
     for task in tds:
-        data.append([user['id'], user['username'],
-                    task['completed'], task['title']])
+        data.append([user.get('id'), user.get('username'),
+                    task.get('completed'), task.get('title')])
 
-    with open(str(user['id']) + ".csv", "w") as f:
+    with open(str(user.get('id')) + ".csv", "w") as f:
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         writer.writerows(data)

@@ -3,9 +3,9 @@
 Using what you did in the task #0, extend your Python
 script to export data in the JSON format.
 """
-import sys
-import requests
 import json
+import requests
+import sys
 
 
 if __name__ == "__main__":
@@ -13,10 +13,10 @@ if __name__ == "__main__":
     users = requests.get(url + "users").json()
     tds = requests.get(url + "todos").json()
 
-    data = {u['id']: [{'username': u['username'],
-                       'task': t['title'],
-                       'completed': t['completed']}
-                     for t in tds if t['userId'] == u['id']]
+    data = {u.get('id'): [{'username': u.get('username'),
+                           'task': t.get('title'),
+                           'completed': t.get('completed')}
+                          for t in tds if t['userId'] == u['id']]
             for u in users}
 
     with open("todo_all_employees.json", "w") as f:
