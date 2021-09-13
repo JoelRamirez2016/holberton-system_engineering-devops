@@ -13,7 +13,7 @@ if __name__ == "__main__":
     success = [task for task in tds if task['completed']]
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(user['name'], len(success), len(tds)))
+          .format(user.get('name'), len(success), len(tds)))
 
     for task in success:
-        print("\t " + task['title'])
+        print("\t " + task.get('title'))
