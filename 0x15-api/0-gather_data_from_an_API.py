@@ -2,8 +2,8 @@
 """script that, using a REST API, for a given employee ID, returns
 information about his/her TODO list progress."""
 
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
