@@ -16,4 +16,4 @@ if __name__ == "__main__":
           .format(user['name'], len(success), len(tds)))
 
     for task in success:
-        print("\t" + task['title'])
+        print("\t " + task['title'])
